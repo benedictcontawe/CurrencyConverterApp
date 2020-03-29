@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data class="MainBinder">
+        <variable
+            name="viewModel"
+            type="com.example.currencyconverterapp.MainViewModel" />
+    </data>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3.5"
+        android:gravity="center"
+        tools:context=".View.MainActivity">
+
+        <TableRow
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="API Callback"/>
+
+            </RelativeLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From Currency"/>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_fromCurrency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/array_currency"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/et_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionDone" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To Currency"/>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_toCurrency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/array_currency"/>
+
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="0.5"
+            android:weightSum="1"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_convert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Convert" />
+
+            </RelativeLayout>
+
+        </TableRow>
+
+    </TableLayout>
+
+</layout>
