@@ -34,16 +34,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setLiveDataObservers(){
 
-        viewModel.getCurrency().observe(this, object : Observer<List<CurrencyTable>> {
-            override fun onChanged(data: List<CurrencyTable>) {
+        viewModel.getCurrency().observe(this, object : Observer<CurrencyTable> {
+            override fun onChanged(data: CurrencyTable) {
                 //You have converted [fromAmount] [fromCurrency] to [toAmount] [toCurrency]. Commission Fee - 0.70 [fromCurrency].
                 data.let {
                     binding.tvStatus.setText("You have converted " +
-                            "${it.first().fromAmount} " +
-                            "${it.first().fromCurrency} " +
+                            "${data.fromAmount} " +
+                            "${data.fromCurrency} " +
                             "to " +
-                            "${it.first().toAmount} " +
-                            "${it.first().toCurrency}" +
+                            "${data.toAmount} " +
+                            "${data.toCurrency}" +
                             ". Commission Fee - 0.70 [fromCurrency].")
                 }
                 Toast.makeText(this@MainActivity, "Converted!", Toast.LENGTH_SHORT).show()

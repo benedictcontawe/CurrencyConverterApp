@@ -15,11 +15,9 @@ class MainViewModel : AndroidViewModel {
 
     constructor(application: Application) : super(application) {
         repository = CurrencyRepository.getInstance(application)
-
-        repository.reset()
     }
 
-    fun getCurrency() : LiveData<List<CurrencyTable>> {
+    fun getCurrency() : LiveData<CurrencyTable> {
         return repository.getFirst()
     }
 

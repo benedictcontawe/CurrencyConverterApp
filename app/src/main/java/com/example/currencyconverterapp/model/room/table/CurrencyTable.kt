@@ -25,7 +25,7 @@ public class CurrencyTable {
     @ColumnInfo(name = "ConvertedCurrency")
     var toCurrency : String? = null
 
-    constructor(fromAmount : String, fromCurrency : String, toAmount : String, toCurrency : String){
+    constructor(fromAmount : String, fromCurrency : String, toAmount : String, toCurrency : String) {
         this.id = 1
         this.fromAmount = fromAmount
         this.fromCurrency = fromCurrency
